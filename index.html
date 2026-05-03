@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dev-Detective</title>
+
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Dev Detective</h1>
+      <div id="selectMode">
+        <button id="normalModeBtn">Normal Mode</button>
+        <button id="battleModeBtn">Battle Mode</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="normalMode">
+        <div>
+          <input type="text" />
+          <button>Search</button>
+        </div>
+        <div class="profileCard1">
+          <img class="userAvatar" src="" alt="" />
+          <p class="userName"></p>
+          <p class="userBio"></p>
+          <p class="userJoinDate"></p>
+          <a class="userPortfolio" href="" target="_blank"></a>
+          <div class="userLatestRepos"></div>
+        </div>
+      </section>
+
+      <section id="battleMode">
+        <div>
+          <input type="text" />
+          <input type="text" />
+          <button>Battle</button>
+        </div>
+        <div>
+          <div class="profileCard2">
+            <img class="userAvatar" src="" alt="" />
+            <p class="userName"></p>
+            <p class="userBio"></p>
+            <p class="userJoinDate"></p>
+            <a class="userPortfolio" href=""></a>
+            <div class="userLatestRepos"></div>
+            <p class="userStars"></p>
+            <p class="userFollowers"></p>
+          </div>
+          <div class="profileCard2">
+            <img class="userAvatar" src="" alt="" />
+            <p class="userName"></p>
+            <p class="userBio"></p>
+            <p class="userJoinDate"></p>
+            <a class="userPortfolio" href=""></a>
+            <div class="userLatestRepos"></div>
+            <p class="userStars"></p>
+            <p class="userFollowers"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

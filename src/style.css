@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {}
+
+header {
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+header div {
+  display: flex;
+  
+}
+
+header button {
+  margin: 0px;
+  padding: 5px 7px;
+  border-bottom: none;
+  outline: none;
+  background-color: whitesmoke;
+}
+
+main {
+  padding: 2rem;
+  background-color: whitesmoke;
+  height: 100%;
+}
+
+#normalMode {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.profileCard1 {
+  height: 35rem;
+  width: 30rem;
+  background-color: aqua;
+}
+
+#normalMode {
+  display: none;
+}
