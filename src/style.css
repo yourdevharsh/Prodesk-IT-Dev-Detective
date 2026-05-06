@@ -1,9 +1,13 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
 }
 
-body {}
+body {
+  background-color: #0f0727;
+}
 
 header {
   padding-top: 1.5rem;
@@ -14,26 +18,43 @@ header {
   gap: 1rem;
 }
 
+header h1 {
+  color: white;
+}
+
 header div {
   display: flex;
-  
+  font-size: 1rem;
 }
 
 header button {
   margin: 0px;
-  padding: 5px 7px;
-  border-bottom: none;
+  padding: 0.7rem 1.2rem;
+  border: none;
   outline: none;
   background-color: whitesmoke;
 }
 
-main {
-  padding: 2rem;
-  background-color: whitesmoke;
-  height: 100%;
+#normalModeBtn {
+  border-top-left-radius: 5px;
+  background-color: #f8c463; /* Changeable */
+  font-size: 1.1rem; /* Changeable */
 }
 
-#normalMode {
+#battleModeBtn {
+  border-top-right-radius: 5px;
+}
+
+main {
+  font-size: 1rem;
+  padding: 2rem;
+  background-color: #f8c463;
+  border-radius: 10px;
+  height: 70vh;
+}
+
+#normalMode,
+#battleMode {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,12 +62,216 @@ main {
   gap: 3rem;
 }
 
-.profileCard1 {
-  height: 35rem;
-  width: 30rem;
-  background-color: aqua;
+#battleMode {
+  display: none;
 }
 
-#normalMode {
+.profileCard {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-areas:
+    "avatar name"
+    "avatar bio"
+    "avatar date"
+    "avatar portfolio"
+    "repos repos";
+
+  gap: 8px 24px;
+  grid-template-rows: min-content min-content min-content min-content auto;
+  align-items: center;
+  background-color: #eee;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  box-shadow: 7px 7px 10px black;
+  max-width: 900px;
+}
+
+.profileCard > * {
+  border-bottom: solid grey 1px;
+}
+
+.profileCard .userAvatar {
+  grid-area: avatar;
+  width: 220px;
+  align-self: start;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profileCard .userName {
+  grid-area: name;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.profileCard .userBio {
+  grid-area: bio;
+  margin: 0;
+  color: black;
+}
+
+.profileCard .userJoinDate {
+  grid-area: date;
+  margin: 0;
+  font-size: 1rem;
+  color: black;
+}
+
+.profileCard .userPortfolio {
+  grid-area: portfolio;
+  margin: 0;
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.profileCard .userPortfolio:hover {
+  text-decoration: underline;
+}
+
+.profileCard .userLatestRepos {
+  grid-area: repos;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #ddd;
+  border-bottom: none;
+}
+
+.profileCard div > * {
+  padding: 0.5rem;
+}
+
+.profileCard div a {
+  color: #0066cc;
+}
+
+.profileCard span {
+  float: right;
+}
+
+#profilesBox {
+  display: flex;
+  gap: 7rem;
+}
+
+.profileCard2 {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-areas:
+    "avatar name"
+    "avatar bio"
+    "avatar date"
+    "avatar portfolio"
+    "repos repos"
+    "stars followers";
+
+  gap: 8px 24px;
+  grid-template-rows: min-content min-content min-content min-content auto;
+  align-items: center;
+  background-color: #eee;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  box-shadow: 7px 7px 10px black;
+
+  min-width: 500px;
+  
+}
+
+.profileCard2 > * {
+  border-bottom: solid grey 1px;
+}
+
+.profileCard2 .userAvatar {
+  grid-area: avatar;
+  width: 220px;
+  align-self: start;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profileCard2 .userName {
+  grid-area: name;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.profileCard2 .userBio {
+  grid-area: bio;
+  margin: 0;
+  color: black;
+}
+
+.profileCard2 .userJoinDate {
+  grid-area: date;
+  margin: 0;
+  font-size: 1rem;
+  color: black;
+}
+
+.profileCard2 .userPortfolio {
+  grid-area: portfolio;
+  margin: 0;
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.profileCard2 .userPortfolio:hover {
+  text-decoration: underline;
+}
+
+.profileCard2 .userLatestRepos {
+  grid-area: repos;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #ddd;
+  border-bottom: none;
+}
+
+.profileCard2 div > * {
+  padding: 0.5rem;
+}
+
+.profileCard2 div a {
+  color: #0066cc;
+}
+
+.profileCard2 span {
+  float: right;
+}
+
+.profileCard2 .userStars {
+  grid-area: stars;
+}
+
+.profileCard2 .userFollowers {
+  grid-area: followers;
+}
+
+input,
+main button {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  outline: none;
+  border-radius: 7px;
+  border: none;
+  box-shadow: 5px 5px 7px black;
+  margin: 0rem 0.5rem;
+}
+
+#loadingBox {
   display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: solid 3px blue;
+  border-radius: 10px;
+  background-color: rgb(0, 126, 245);
+  box-shadow: 5px 5px 7px black;
+  padding: 1rem 5rem;
+  color: white;
 }

@@ -18,12 +18,15 @@
     </header>
 
     <main>
+      <aside id="loadingBox">
+        <h3>Loading....</h3>
+      </aside>
       <section id="normalMode">
         <div>
           <input type="text" />
           <button>Search</button>
         </div>
-        <div class="profileCard1">
+        <div class="profileCard">
           <img class="userAvatar" src="" alt="" />
           <p class="userName"></p>
           <p class="userBio"></p>
@@ -35,12 +38,12 @@
 
       <section id="battleMode">
         <div>
-          <input type="text" />
-          <input type="text" />
+          <input id="firstInput" type="text" />
+          <input id="secondInput" type="text" />
           <button>Battle</button>
         </div>
-        <div>
-          <div class="profileCard2">
+        <div id="profilesBox">
+          <div id="firstUserCard" class="profileCard2">
             <img class="userAvatar" src="" alt="" />
             <p class="userName"></p>
             <p class="userBio"></p>
@@ -50,7 +53,7 @@
             <p class="userStars"></p>
             <p class="userFollowers"></p>
           </div>
-          <div class="profileCard2">
+          <div id="secondUserCard" class="profileCard2">
             <img class="userAvatar" src="" alt="" />
             <p class="userName"></p>
             <p class="userBio"></p>
@@ -64,5 +67,7 @@
       </section>
     </main>
     <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/normalScript.js"></script>
+    <script type="module" src="/src/battleScript.js"></script>
   </body>
 </html>
