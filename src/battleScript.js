@@ -94,18 +94,18 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         userAvatarUrl: data[0]["avatar_url"],
         userName: data[0]["name"] || data[0]["login"],
-        userBio: data[0]["bio"],
+        userBio: data[0]["bio"] || "No Bio.",
         userJoinDate: new Date(data[0]["created_at"]),
-        userPortfolio: data[0]["blog"],
+        userPortfolio: data[0]["blog"] || data[1]["html_url"],
         userFollowers: data[0]["followers"],
         repoUrlToSearch: data[0]["repos_url"],
       },
       {
         userAvatarUrl: data[1]["avatar_url"],
         userName: data[1]["name"] || data[1]["login"],
-        userBio: data[1]["bio"],
+        userBio: data[1]["bio"] || "No Bio.",
         userJoinDate: new Date(data[1]["created_at"]),
-        userPortfolio: data[1]["blog"],
+        userPortfolio: data[1]["blog"] || data[1]["html_url"],
         userFollowers: data[1]["followers"],
         repoUrlToSearch: data[1]["repos_url"],
       },
@@ -206,8 +206,8 @@ document.addEventListener("DOMContentLoaded", () => {
     firstUserJoinDateEl.innerHTML = `${formatDate(firstUserJoinDate)}`;
     firstUserPortfolioEl.innerHTML = `Portfolio URL`;
     firstUserPortfolioEl.setAttribute("href", `${firstUserPortfolio}`);
-    firstUserStarsEl.innerHTML = `${firstUserStars}`;
-    firstUserFollowersEl.innerHTML = `${firstUserFollowers}`;
+    firstUserStarsEl.innerHTML = `${firstUserStars} Stars`;
+    firstUserFollowersEl.innerHTML = `${firstUserFollowers} Followers`;
 
     firstUserLatestReposEl.innerHTML = "";
     for (const repo of firstUserRepos) {
@@ -223,8 +223,8 @@ document.addEventListener("DOMContentLoaded", () => {
     secondUserJoinDateEl.innerHTML = `${formatDate(secondUserJoinDate)}`;
     secondUserPortfolioEl.innerHTML = `Portfolio URL`;
     secondUserPortfolioEl.setAttribute("href", `${secondUserPortfolio}`);
-    secondUserStarsEl.innerHTML = `${secondUserStars}`;
-    secondUserFollowersEl.innerHTML = `${secondUserFollowers}`;
+    secondUserStarsEl.innerHTML = `${secondUserStars} Stars`;
+    secondUserFollowersEl.innerHTML = `${secondUserFollowers} Followers`;
 
     secondUserLatestReposEl.innerHTML = "";
     for (const repo of secondUserRepos) {
